@@ -1,4 +1,5 @@
 <include a CircleCI status badge, here>
+[![CircleCI](https://circleci.com/github/jnguyen0220/Udacity-microservice.svg?style=svg)]
 
 ## Project Overview
 
