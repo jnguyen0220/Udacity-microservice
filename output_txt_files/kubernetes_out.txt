@@ -1,5 +1,9 @@
-PS C:\Windows\system32> kubectl logs flaskskearlndemo
- * Serving Flask app "app" (lazy loading)
+PS C:\Windows\system32> kubectl get pods                                                                                NAME               READY   STATUS    RESTARTS   AGE
+flaskskearlndemo   1/1     Running   0          2m30s
+PS C:\Windows\system32> kubectl port-forward flaskskearlndemo 8000:80                                                   Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+PS C:\Windows\system32> kubectl logs flaskskearlndemo                                                                    * Serving Flask app "app" (lazy loading)
  * Environment: production
    WARNING: Do not use the development server in a production environment.
    Use a production WSGI server instead.
@@ -8,14 +12,14 @@ PS C:\Windows\system32> kubectl logs flaskskearlndemo
  * Restarting with stat
  * Debugger is active!
  * Debugger PIN: 231-779-307
-[2020-05-05 12:48:44,733] INFO in app: JSON payload:
+[2020-05-05 20:08:04,911] INFO in app: JSON payload:
 {'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
-[2020-05-05 12:48:44,746] INFO in app: Inference payload DataFrame:
+[2020-05-05 20:08:04,925] INFO in app: Inference payload DataFrame:
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-[2020-05-05 12:48:44,756] INFO in app: Scaling Payload:
+[2020-05-05 20:08:04,935] INFO in app: Scaling Payload:
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-[2020-05-05 12:48:44,760] INFO in app: prediction:
+[2020-05-05 20:08:04,939] INFO in app: prediction:
 [20.35373177134412]
-127.0.0.1 - - [05/May/2020 12:48:44] "POST /predict HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2020 20:08:04] "POST /predict HTTP/1.1" 200 -
